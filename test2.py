@@ -1,3 +1,2 @@
-print('hello, hi')
-
-
+print('hello, xin chao')
+print(' hello ')
