@@ -3,5 +3,5 @@ try:
     a = int(input())
     b = 5/a
     print(b)
-except a==1:
+except:
     print('cho nay bi loi')
