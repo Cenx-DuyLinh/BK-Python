@@ -4,12 +4,12 @@ def RUN():
     import time
     import random
 
-    def update_infoview(infoview_object,time):
+    def update_infoview(infoview_object,time_buffer):
         while True:
             object_value_buffer = infoview_object.get()
             new_value = object_value_buffer + random.randint(1,4)
             infoview_object.set(new_value)
-            time.sleep(time)
+            time.sleep(time_buffer)
         
 
     #Create the window
@@ -41,13 +41,13 @@ def RUN():
     object_roll = infoview('Roll',window,1,3)
 
     #Update thread
-    thread = Thread(target= update_infoview, args = (object_pitch,1, ))
-    thread2 = Thread(target= update_infoview, args = (object_yaw,0.5, ))
-    thread3 = Thread(target= update_infoview, args = (object_roll,2, ))
+    thread_pitch = Thread(target= update_infoview, args = (object_pitch,1, ))
+    thread_yaw = Thread(target= update_infoview, args = (object_yaw,0.5, ))
+    thread_roll = Thread(target= update_infoview, args = (object_roll,2, ))
 
-    thread.start()
-    thread2.start()
-    thread3.start()
+    thread_pitch.start()
+    thread_yaw.start()
+    thread_roll.start()
     
     #Run the UI
     window.mainloop()
