@@ -41,13 +41,13 @@ def RUN():
     object_roll = infoview('Roll',window,1,3)
 
     #Update thread
-    thread = Thread(target= update_infoview, args = (object_pitch,1, ))
-    thread2 = Thread(target= update_infoview, args = (object_yaw,0.5, ))
-    thread3 = Thread(target= update_infoview, args = (object_roll,2, ))
+    thread_pitch = Thread(target= update_infoview, args = (object_pitch,1, ))
+    thread_yaw = Thread(target= update_infoview, args = (object_yaw,0.5, ))
+    thread_roll = Thread(target= update_infoview, args = (object_roll,2, ))
 
-    thread.start()
-    thread2.start()
-    thread3.start()
+    thread_pitch.start()
+    thread_roll.start()
+    thread_yaw.start()
     
     #Run the UI
     window.mainloop()
