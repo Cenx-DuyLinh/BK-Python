@@ -43,40 +43,42 @@ def get_number_for_properties_2_and_3(input_count):
             else: 
                 return output
 #----------------------------------------------------------------
+def RUN():
+    i = 1
+    input_count = 0
+    data_slot={}
+    while i>0:
+        properties_want_to_run = get_properties()
+        if properties_want_to_run == 4:
+            break
+        elif properties_want_to_run == 1:
+            input_count = input_count + 1
+            data_input = input("Please type the data you want to save: ")
+            data_slot["data_".format(input_count)] = LoggingDatabase(input_count,data_input)
+        elif properties_want_to_run == 2:
+            if input_count == 0 :
+                print("No file has been save yet")
+                continue
+            print('Please choose the save file you want to get: ')
+            i2 = 1
+            while i2 <= input_count:
+                print('Save number ',i2)
+                i2 = i2 + 1
+            file_choose = get_number_for_properties_2_and_3(input_count)
+            data_slot["data_".format(file_choose)].get()
+        elif properties_want_to_run == 3:
+            if input_count == 0 :
+                print("No file has been save yet")
+                continue
+            print('Please choose the save file you want to create: ')
+            i2 = 1
+            while i2 <= input_count:
+                print('Save number ',i2)
+                i2 = i2 + 1
+            file_choose = get_number_for_properties_2_and_3(input_count)
+            data_slot["data_".format(file_choose)].create_file()
 
-i = 1
-input_count = 0
-data_slot={}
-while i>0:
-    properties_want_to_run = get_properties()
-    if properties_want_to_run == 4:
-        break
-    elif properties_want_to_run == 1:
-        input_count = input_count + 1
-        data_input = input("Please type the data you want to save: ")
-        data_slot["data_".format(input_count)] = LoggingDatabase(input_count,data_input)
-    elif properties_want_to_run == 2:
-        if input_count == 0 :
-            print("No file has been save yet")
-            continue
-        print('Please choose the save file you want to get: ')
-        i2 = 1
-        while i2 <= input_count:
-            print('Save number ',i2)
-            i2 = i2 + 1
-        file_choose = get_number_for_properties_2_and_3(input_count)
-        data_slot["data_".format(file_choose)].get()
-    elif properties_want_to_run == 3:
-        if input_count == 0 :
-            print("No file has been save yet")
-            continue
-        print('Please choose the save file you want to create: ')
-        i2 = 1
-        while i2 <= input_count:
-            print('Save number ',i2)
-            i2 = i2 + 1
-        file_choose = get_number_for_properties_2_and_3(input_count)
-        data_slot["data_".format(file_choose)].create_file()
 
-
+if __name__ == "__main__":
+        RUN()
 
