@@ -10,7 +10,7 @@ def RUN():
     window = tk.Tk()
     window.geometry('600x500')
 
-
+    
     figure_buffer = plt.Figure(figsize=(5,4),dpi=100)
     figure_plot = figure_buffer.add_subplot(1,1,1)
     #Place figure on main window
