@@ -41,9 +41,9 @@ def RUN():
     object_roll = infoview('Roll',window,1,3)
 
     #Update thread
-    thread_pitch = Thread(target= update_infoview, args = (object_pitch,1, ))
-    thread_yaw = Thread(target= update_infoview, args = (object_yaw,0.5, ))
-    thread_roll = Thread(target= update_infoview, args = (object_roll,2, ))
+    thread_pitch = Thread(target= update_infoview,daemon=True, args = (object_pitch,0, ))
+    thread_yaw = Thread(target= update_infoview,daemon=True, args = (object_yaw,0, ))
+    thread_roll = Thread(target= update_infoview,daemon = True, args = (object_roll,0, ))
 
     thread_pitch.start()
     thread_yaw.start()
