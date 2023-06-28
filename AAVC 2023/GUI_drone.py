@@ -10,7 +10,7 @@ class DroneControlApp:
         self.custom_font_title = font.Font(family="Tahoma", size=30, weight="bold", slant="italic")
         self.custom_font_label = font.Font(underline=True,weight='bold')
         self.custom_font_drop = font.Font(family="Tahoma", size=18, weight="bold")
-        self.custom_font_arrow = font.Font(size=18,weight='bold')
+        self.custom_font_arrow = font.Font(size=18)
         
         self.label_title = tk.Label(master=self.window, text= 'Drone Control',font=self.custom_font_title, width= 20)
         self.label_title.grid(row=0,column= 0, columnspan=2)
@@ -107,15 +107,14 @@ class DroneControlApp:
         self.frame_movement = tk.Frame(self.window,borderwidth=1,relief='solid',width=650, height=300)
         self.frame_movement.grid_propagate(False)
         self.frame_movement.grid(row=2,column=0,columnspan=2,padx = 20,pady=(20,50))
-
         #Create component
         self.label_movement = tk.Label(master=self.frame_movement, text='Drone Movement', font = self.custom_font_label)
         self.label_DistantToMove = tk.Label(master=self.frame_movement, text='Distant to move:                m',font = 'Arial 13')
         self.label_AltitudeToMove = tk.Label(master=self.frame_movement, text='Altitude to move:                m',font = 'Arial 13')
-        self.button_forward = tk.Button(master=self.frame_movement, text='⬆',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
-        self.button_backward = tk.Button(master=self.frame_movement, text='⬇',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
-        self.button_left = tk.Button(master=self.frame_movement, text='⬅',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
-        self.button_right = tk.Button(master=self.frame_movement, text='➡',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
+        self.button_forward = tk.Button(master=self.frame_movement, text='↑',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
+        self.button_backward = tk.Button(master=self.frame_movement, text='↓',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
+        self.button_left = tk.Button(master=self.frame_movement, text='←',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
+        self.button_right = tk.Button(master=self.frame_movement, text='→',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
         self.button_up = tk.Button(master=self.frame_movement, text='Up',font=self.custom_font_arrow,width=6,height=2,bd = 3,command=None)
         self.button_down = tk.Button(master=self.frame_movement, text='Down',font=self.custom_font_arrow,width=6,height=2,bd = 3,command=None)
         self.entry_DistantToMove = tk.Entry(master = self.frame_movement, width= 10)
