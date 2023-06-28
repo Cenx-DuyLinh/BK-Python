@@ -80,12 +80,14 @@ class DroneControlApp:
         button_width = 15
         button_heigth = 2
         entry_width = 5
-
+        
         self.label_transit = tk.Label(master=self.frame_transit, text='Transit Operation', font = self.custom_font_label)
+        self.label_m = tk.Label(master=self.frame_transit, text='m                                               m/s')
         self.button_arm = tk.Button(master=self.frame_transit, text='Arm & Takeoff',width=button_width,height=button_heigth,command=None)
         self.button_setspeed = tk.Button(master=self.frame_transit, text='Set Speed',width=button_width,height=button_heigth,command=None)
         self.button_123 = tk.Button(master=self.frame_transit, text='Enter transit 1-2-3',width=button_width,height=button_heigth,command=None)
         self.button_321 = tk.Button(master=self.frame_transit, text='Exit transit 3-2-1',width=button_width,height=button_heigth,command=None)
+        self.button_land = tk.Button(master=self.frame_transit, text='Land Drone',width=button_width,height=button_heigth,command=None)
         
         self.entry_setspeed = tk.Entry(master= self.frame_transit,width=entry_width,font='Arial 18')
         self.entry_arm = tk.Entry(master= self.frame_transit,width=entry_width,font = 'Arial 18')
@@ -97,6 +99,8 @@ class DroneControlApp:
         self.button_setspeed.grid(row=1,column=1,padx=padx_button_transit,pady=pady_button_transit)
         self.button_123.grid(row=3,column=0,padx=padx_button_transit,pady=pady_button_transit)
         self.button_321.grid(row=3,column=1,padx=padx_button_transit,pady=pady_button_transit)
+        self.button_land.grid(row=4,column=0,columnspan=2,padx=padx_button_transit,pady=pady_button_transit)
+        self.label_m.place(x= 115, y= 150)
 
         padx_entry = 20
         pady_entry = 1
@@ -109,16 +113,16 @@ class DroneControlApp:
         self.frame_movement.grid(row=2,column=0,columnspan=2,padx = 20,pady=(20,50))
         #Create component
         self.label_movement = tk.Label(master=self.frame_movement, text='Drone Movement', font = self.custom_font_label)
-        self.label_DistantToMove = tk.Label(master=self.frame_movement, text='Distant to move:                m',font = 'Arial 13')
-        self.label_AltitudeToMove = tk.Label(master=self.frame_movement, text='Altitude to move:                m',font = 'Arial 13')
+        self.label_DistantToMove = tk.Label(master=self.frame_movement, text='Distant to move:                  m',font = 'Arial 13')
+        self.label_AltitudeToMove = tk.Label(master=self.frame_movement, text='Altitude to move:                  m',font = 'Arial 13')
         self.button_forward = tk.Button(master=self.frame_movement, text='↑',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
         self.button_backward = tk.Button(master=self.frame_movement, text='↓',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
         self.button_left = tk.Button(master=self.frame_movement, text='←',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
         self.button_right = tk.Button(master=self.frame_movement, text='→',font=self.custom_font_arrow,width=3,height=1,bd = 3,command=None)
         self.button_up = tk.Button(master=self.frame_movement, text='Up',font=self.custom_font_arrow,width=6,height=2,bd = 3,command=None)
         self.button_down = tk.Button(master=self.frame_movement, text='Down',font=self.custom_font_arrow,width=6,height=2,bd = 3,command=None)
-        self.entry_DistantToMove = tk.Entry(master = self.frame_movement, width= 10)
-        self.entry_AltitudeToMove = tk.Entry(master = self.frame_movement, width= 10)
+        self.entry_DistantToMove = tk.Entry(master = self.frame_movement, width= 8,font='arial 13')
+        self.entry_AltitudeToMove = tk.Entry(master = self.frame_movement, width= 8,font='arial 13')
 
         #Place component
         self.label_movement.place(x=250,y=20)
